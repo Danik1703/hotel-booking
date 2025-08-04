@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #0077b6;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  background: #f8f9fa;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0077b6;
+  color: white;
+}

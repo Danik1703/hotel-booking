@@ -1,0 +1,24 @@
+.footer {
+  background-color: #00264d;
+  color: #ccc;
+  padding: 2rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  user-select: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: auto;
+
+  p {
+    margin: 0.3rem 0;
+  }
+
+  a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
