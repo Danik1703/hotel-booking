@@ -1,0 +1,28 @@
+<div class="filters">
+  <label>
+    Тип житла:
+    <select [(ngModel)]="type">
+      <option value="">Всі типи</option>
+      <option value="квартира">Квартира</option>
+      <option value="будинок">Будинок</option>
+      <option value="кімната">Кімната</option>
+    </select>
+  </label>
+
+  <label>
+    Мін. ціна:
+    <input type="number" [(ngModel)]="minPrice" placeholder="від" />
+  </label>
+
+  <label>
+    Макс. ціна:
+    <input type="number" [(ngModel)]="maxPrice" placeholder="до" />
+  </label>
+
+  <label>
+    Рейтинг:
+    <input type="number" [(ngModel)]="rating" min="0" max="5" placeholder="від 0 до 5" />
+  </label>
+
+  <button (click)="applyFilters()">Фільтрувати</button>
+</div>

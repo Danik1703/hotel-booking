@@ -1,0 +1,41 @@
+.room-detail {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+
+  .main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 300px; /* Очень важно, чтобы карта имела высоту */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .reviews {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  .book-btn {
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #1565c0;
+    }
+  }
+}

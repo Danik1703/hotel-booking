@@ -1,9 +1,16 @@
-<section class="rooms">
-  <h2>Наші номери</h2>
-  <div class="room" *ngFor="let room of rooms">
+<app-search (searchParams)="onSearch($event)"></app-search>
+<app-filters (filtersChanged)="onFilterChange($event)"></app-filters>
+
+<div class="rooms">
+  <div class="room" *ngFor="let room of filteredRooms">
     <img [src]="room.image" [alt]="room.name" />
-    <h3>{{ room.name }}</h3>
-    <p>{{ room.description }}</p>
-    <p><strong>Ціна: {{ room.price }} грн/ніч</strong></p>
+    <div class="room__info">
+      <h3>{{ room.name }}</h3>
+      <p>{{ room.description }}</p>
+      <p><strong>Ціна: {{ room.price }} грн/ніч</strong></p>
+
+      <button (click)="goToDetail(room.id)" class="detail-btn">Докладніше</button>
+    </div>
   </div>
-</section>
+
+</div>

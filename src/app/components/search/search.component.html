@@ -1,0 +1,8 @@
+<div class="search">
+  <input type="text" placeholder="Місце" [(ngModel)]="location" />
+  <input type="date" [(ngModel)]="checkInDate" />
+  <input type="date" [(ngModel)]="checkOutDate" />
+  <input type="number" min="1" [(ngModel)]="guests" placeholder="Гостей" />
+
+  <button (click)="search()">Пошук</button>
+</div>

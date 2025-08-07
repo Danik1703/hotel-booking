@@ -1,0 +1,19 @@
+<div class="room-detail" *ngIf="room">
+  <h2>{{ room.name }}</h2>
+  <img [src]="room.image" [alt]="room.name" class="main-image" />
+
+  <p>{{ room.description }}</p>
+  <p><strong>Ціна:</strong> {{ room.price }} грн/ніч</p>
+
+  <h3>Місце розташування</h3>
+  <div id="map" class="map-container"></div>
+
+  <h3>Відгуки</h3>
+  <ul class="reviews">
+    <li *ngFor="let review of room.reviews">
+      <strong>{{ review.author }}:</strong> {{ review.text }}
+    </li>
+  </ul>
+
+  <button class="book-btn">Забронювати</button>
+</div>

@@ -1,0 +1,59 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  background: linear-gradient(to right, #caf0f8, #edf6f9);
+  min-height: calc(100vh - 120px); // если есть хедер и футер
+
+  &__content {
+    max-width: 600px;
+
+    h1 {
+      font-size: 2.8rem;
+      color: #03045e;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .home__btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #0077b6;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #023e8a;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    &__content {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
