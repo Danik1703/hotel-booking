@@ -1,1 +1,19 @@
-<p>profile works!</p>
+<div class="profile-container" *ngIf="user; else notLoggedIn">
+  <h2>👤 Особистий кабінет</h2>
+  <div class="profile-info">
+    <p><strong>Ім’я:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+  </div>
+
+  <button mat-raised-button color="primary" routerLink="/my-bookings">
+    📖 Мої бронювання
+  </button>
+
+  <button mat-raised-button color="warn" (click)="logout()">
+    🚪 Вийти
+  </button>
+</div>
+
+<ng-template #notLoggedIn>
+  <p>Ви не авторизовані. <a routerLink="/login">Увійти</a></p>
+</ng-template>

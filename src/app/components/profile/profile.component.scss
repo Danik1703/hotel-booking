@@ -1,0 +1,96 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.profile-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 35px 30px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .profile-info {
+        margin-bottom: 30px;
+        text-align: left;
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin: 10px 0;
+
+            strong {
+                color: #333;
+            }
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+
+    button[color="primary"] {
+        background: #3f51b5;
+        color: #fff;
+
+        &:hover {
+            background: #303f9f;
+        }
+    }
+
+    button[color="warn"] {
+        background: #e53935;
+        color: #fff;
+
+        &:hover {
+            background: #c62828;
+        }
+    }
+}
+
+ng-template {
+    p {
+        text-align: center;
+        font-size: 1rem;
+        color: #555;
+
+        a {
+            color: #3f51b5;
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    footer {
+        margin-top: auto;
+        padding: 15px 0;
+        text-align: center;
+        background: #3f51b5;
+        color: #fff;
+        font-size: 0.9rem;
+    }
+}

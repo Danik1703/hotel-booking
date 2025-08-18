@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,11 +17,10 @@ import { HomeComponent } from './components/home/home.component';
 import { RoomDetailComponent } from './components/room-detail/room-detail.component';
 import { SearchComponent } from './components/search/search.component';
 import { FiltersComponent } from './components/filters/filters.component';
-import { BookingCartComponent } from './components/booking-cart/booking-cart.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { MyBookingsComponent } from './components/profile/my-bookings/my-bookings.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { ProfileDashboardComponent } from './components/profile-dashboard/profile-dashboard.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -32,18 +33,19 @@ import { RegisterComponent } from './components/auth/register/register.component
     RoomDetailComponent,
     SearchComponent,
     FiltersComponent,
-    BookingCartComponent,
     LoginComponent,
-    ProfileComponent,
-    MyBookingsComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileDashboardComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

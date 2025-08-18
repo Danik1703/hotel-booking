@@ -5,7 +5,7 @@
   padding: 4rem 2rem;
   gap: 2rem;
   background: linear-gradient(to right, #caf0f8, #edf6f9);
-  min-height: calc(100vh - 120px); // если есть хедер и футер
+  min-height: calc(100vh - 120px); 
 
   &__content {
     max-width: 600px;

@@ -1,0 +1,38 @@
+<div class="profile-dashboard" *ngIf="user; else notLoggedIn">
+  <div class="profile-info">
+    <h2>👤 Особистий кабінет</h2>
+    <p><strong>Ім’я:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <button mat-raised-button color="primary">📖 Мої бронювання</button>
+    <button mat-raised-button color="warn" (click)="logout()">🚪 Вийти</button>
+  </div>
+
+  <div>
+    <h2>📖 Мої бронювання</h2>
+    <div *ngIf="bookings.length > 0; else noBookings">
+      <mat-card *ngFor="let booking of bookings" class="booking-card">
+        <mat-card-header>
+          <mat-card-title>{{ booking.roomName }}</mat-card-title>
+          <mat-card-subtitle>
+            З {{ booking.checkIn }} до {{ booking.checkOut }}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Кількість гостей: {{ booking.guests }}</p>
+          <p>Ціна: {{ booking.price }} ₴</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <ng-template #noBookings>
+      <p>У вас ще немає бронювань.</p>
+    </ng-template>
+  </div>
+
+  <button mat-raised-button color="accent" routerLink="/cart">
+    🛒 Переглянути корзину
+  </button>
+</div>
+
+<ng-template #notLoggedIn>
+  <p>Ви не авторизовані. <a routerLink="/login">Увійти</a></p>
+</ng-template>

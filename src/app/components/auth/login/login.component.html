@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div class="auth-container">
+  <h2>🔑 Вхід</h2>
+
+  <form (ngSubmit)="onLogin()">
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+
+    <label>Пароль:</label>
+    <input type="password" [(ngModel)]="password" name="password" required />
+
+    <button type="submit">Увійти</button>
+  </form>
+
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <p>Ще немає акаунта? <a routerLink="/register">Зареєструйтесь</a></p>
+</div>

@@ -10,10 +10,38 @@ export class RoomListComponent {
   searchTerm: string = '';
 
   rooms = [
-    { id: 1, name: 'Люкс', description: 'З видом на море', price: 2500, image: 'assets/rooms/lux.jpg', location: 'Одеса', type: 'квартира', rating: 5 },
-    { id: 2, name: 'Стандарт', description: 'Для двох', price: 1200, image: 'assets/rooms/standard.jpg', location: 'Львів', type: 'кімната', rating: 4 },
-    { id: 3, name: 'Економ', description: 'Дешево', price: 700, image: 'assets/rooms/econom.jpg', location: 'Київ', type: 'кімната', rating: 3 }
+    {
+      id: 1,
+      name: 'Люкс',
+      description: 'З видом на море. Розташована в місті Одеса.',
+      price: 2500,
+      image: 'assets/rooms/lux.jpg',
+      location: 'Одеса',
+      type: 'квартира',
+      rating: 5
+    },
+    {
+      id: 2,
+      name: 'Стандарт',
+      description: 'Для двох. Розташована в місті Львів.',
+      price: 1200,
+      image: 'assets/rooms/standard.jpg',
+      location: 'Львів',
+      type: 'кімната',
+      rating: 4
+    },
+    {
+      id: 3,
+      name: 'Економ',
+      description: 'Дешево. Розташована в місті Київ.',
+      price: 700,
+      image: 'assets/rooms/econom.jpg',
+      location: 'Київ',
+      type: 'кімната',
+      rating: 3
+    }
   ];
+
 
   constructor(private router: Router) { }
 

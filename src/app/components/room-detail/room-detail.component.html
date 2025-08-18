@@ -1,19 +1,41 @@
 <div class="room-detail" *ngIf="room">
-  <h2>{{ room.name }}</h2>
-  <img [src]="room.image" [alt]="room.name" class="main-image" />
+  <div class="room-card">
+    <h2 class="room-title">{{ room.name }}</h2>
 
-  <p>{{ room.description }}</p>
-  <p><strong>Ціна:</strong> {{ room.price }} грн/ніч</p>
+    <div class="image-gallery">
+      <div class="main-image-wrapper">
+        <img [src]="room.image" [alt]="room.name" class="main-image" />
+      </div>
+      <div class="thumbnails">
+        <img *ngFor="let img of gallery" [src]="img" (click)="room.image = img" [class.active]="room.image === img" />
+      </div>
+    </div>
 
-  <h3>Місце розташування</h3>
-  <div id="map" class="map-container"></div>
+    <p class="description">{{ room.description }}</p>
 
-  <h3>Відгуки</h3>
-  <ul class="reviews">
-    <li *ngFor="let review of room.reviews">
-      <strong>{{ review.author }}:</strong> {{ review.text }}
-    </li>
-  </ul>
+    <div class="price-card">
+      <span class="price-value">{{ room.price | currency:'UAH':'symbol' }}</span>
+      <span class="per-night">/ніч</span>
+    </div>
 
-  <button class="book-btn">Забронювати</button>
+    <h3 class="section-title"><i class="fas fa-map-marker-alt"></i> Місце розташування</h3>
+    <div id="map" class="map-container"></div>
+
+    <h3 class="section-title"><i class="fas fa-comments"></i> Відгуки</h3>
+    <ul class="reviews">
+      <li *ngFor="let review of room.reviews">
+        <div class="avatar">{{ review.author[0] }}</div>
+        <div class="review-content">
+          <strong>{{ review.author }}</strong>
+          <p>"{{ review.text }}"</p>
+        </div>
+      </li>
+      <li *ngIf="!room.reviews.length" class="no-reviews">Ще немає відгуків</li>
+    </ul>
+
+    <button class="book-btn" (click)="bookRoom()" [disabled]="isBooked">
+      <i class="fas fa-calendar-check"></i>
+      {{ isBooked ? 'Вже заброньовано' : 'Забронювати' }}
+    </button>
+  </div>
 </div>

@@ -1,0 +1,27 @@
+<div class="cart-container">
+    <h2>🛒 Ваша корзина</h2>
+
+    <div *ngIf="cart.length > 0; else emptyCart">
+        <div *ngFor="let item of cart" class="cart-item">
+            <img [src]="item.image" alt="{{ item.name }}" width="120" />
+            <div class="cart-info">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.price }} грн / ніч</p>
+            </div>
+        </div>
+
+        <hr />
+
+        <p><strong>Сума:</strong> {{ getTotal() }} грн</p>
+        <div class="cart-buttons">
+            <button class="mat-raised-button" (click)="clearCart()">Очистити корзину</button>
+            <button class="mat-raised-button" (click)="checkout()">Оформити бронювання</button>
+        </div>
+
+
+    </div>
+
+    <ng-template #emptyCart>
+        <p>Корзина порожня 🛒</p>
+    </ng-template>
+</div>

@@ -7,4 +7,31 @@
       <li><a routerLink="/contacts">Контакти</a></li>
     </ul>
   </nav>
+
+  <div class="header__cart">
+    <button class="cart-icon" (click)="toggleCart()">
+      🛒 <span class="cart-count" *ngIf="cart.length > 0">{{ cart.length }}</span>
+    </button>
+
+    <div class="cart-dropdown" *ngIf="isCartOpen">
+      <h3>Ваша корзина</h3>
+
+      <div *ngIf="cart.length > 0; else emptyCart">
+        <div *ngFor="let item of cart" class="cart-item-mini">
+          <img [src]="item.image" alt="{{ item.name }}" class="cart-item-img" />
+          <span>{{ item.name }}</span>
+          <span>{{ item.price }} грн</span>
+        </div>
+
+
+        <p><strong>Сума:</strong> {{ getTotal() }} грн</p>
+        <button class="cart-btn checkout" (click)="checkout()">Оформити бронювання</button>
+        <button class="cart-btn clear" (click)="clearCart()">Очистити корзину</button>
+      </div>
+
+      <ng-template #emptyCart>
+        <p>Корзина порожня 🛒</p>
+      </ng-template>
+    </div>
+  </div>
 </header>

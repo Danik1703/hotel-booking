@@ -4,27 +4,30 @@ import { RoomListComponent } from './components/room-list/room-list.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { HomeComponent } from './components/home/home.component';
 import { RoomDetailComponent } from './components/room-detail/room-detail.component';
-import { BookingCartComponent } from './components/booking-cart/booking-cart.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { MyBookingsComponent } from './components/profile/my-bookings/my-bookings.component';
-
+import { ProfileDashboardComponent } from './components/profile-dashboard/profile-dashboard.component';
+import { CartComponent } from './components/cart/cart.component';  // ✅ импорт корзины
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'rooms', component: RoomListComponent },
-  { path: 'room/:id', component: RoomDetailComponent },
-  { path: 'contacts', component: ContactsComponent },
-  { path: 'cart', component: BookingCartComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'my-bookings', component: MyBookingsComponent },
+
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'rooms', component: RoomListComponent, canActivate: [AuthGuard] },
+  { path: 'room/:id', component: RoomDetailComponent, canActivate: [AuthGuard] },
+  { path: 'contacts', component: ContactsComponent, canActivate: [AuthGuard] },
+
+  { path: 'profile', component: ProfileDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },  
+
+  { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
