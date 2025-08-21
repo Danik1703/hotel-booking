@@ -4,13 +4,22 @@
 <div class="rooms">
   <div class="room" *ngFor="let room of filteredRooms">
     <img [src]="room.image" [alt]="room.name" />
+
     <div class="room__info">
       <h3>{{ room.name }}</h3>
       <p>{{ room.description }}</p>
-      <p><strong>Ціна: {{ room.price }} грн/ніч</strong></p>
+
+      <div class="price-rating">
+        <span class="price">{{ room.price }} грн/ніч</span>
+
+        <span class="rating">
+          <i *ngFor="let star of [1,2,3,4,5]" 
+             class="fa" 
+             [ngClass]="star <= room.rating ? 'fa-star' : 'fa-star-o'"></i>
+        </span>
+      </div>
 
       <button (click)="goToDetail(room.id)" class="detail-btn">Докладніше</button>
     </div>
   </div>
-
 </div>

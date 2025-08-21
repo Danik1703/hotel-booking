@@ -1,0 +1,13 @@
+export const PLUGIN_VERSION = {
+    "dirty": false,
+    "raw": "",
+    "hash": "",
+    "distance": null,
+    "tag": null,
+    "semver": null,
+    "suffix": "",
+    "semverString": null,
+    "name": "hotel-booking",
+    "version": "1.0.0",
+    "main": "main.js"
+};
